@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/app.css}" href="/css/app.css">
+</head>
+<body class="auth-page">
+<main class="auth-shell auth-single">
+    <section class="form-panel">
+        <div class="login-card auth-card">
+            <a class="brand brand-dark auth-brand" href="/login">
+                <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4.5 6.3v8.6L12 19.2l7.5-4.3V6.3L12 2Zm0 3.1 4.8 2.7-4.8 2.8-4.8-2.8L12 5.1Zm-5 5.4 3.5 2v3.9l-3.5-2v-3.9Zm6.5 5.9v-3.9l3.5-2v3.9l-3.5 2Z"/></svg></span>
+                <span>Nimbus</span>
+            </a>
+            <header class="form-heading">
+                <span class="eyebrow">Tài khoản của bạn</span>
+                <h2>Đăng nhập</h2>
+                <p>Nhập thông tin bên dưới để truy cập tài khoản.</p>
+            </header>
+            <div id="loginAlert" class="alert" role="alert" aria-live="polite" hidden></div>
+            <form id="loginForm" novalidate>
+                <div class="field-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrap">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm8 7 7-4.4V7l-7 4.4L5 7v.6l7 4.4Z"/></svg>
+                        <input type="email" id="email" placeholder="name@example.com" autocomplete="email" required>
+                    </div>
+                    <span class="field-error" id="emailError"></span>
+                </div>
+                <div class="field-group">
+                    <label for="password">Mật khẩu</label>
+                    <div class="input-wrap">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M17 8h-1V6a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v9h14v-9a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V6Zm3 8.7V17h-2v-2.3a2 2 0 1 1 2 0Z"/></svg>
+                        <input type="password" id="password" placeholder="Nhập mật khẩu" autocomplete="current-password" required>
+                        <button class="password-toggle" data-toggle-password="password" type="button" aria-label="Hiện mật khẩu"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5c5.5 0 9.5 5.2 9.5 7s-4 7-9.5 7S2.5 13.8 2.5 12 6.5 5 12 5Zm0 2c-3.7 0-6.6 3.2-7.4 5 .8 1.8 3.7 5 7.4 5s6.6-3.2 7.4-5c-.8-1.8-3.7-5-7.4-5Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg></button>
+                    </div>
+                    <span class="field-error" id="passwordError"></span>
+                </div>
+                <button id="Login" class="primary-button" type="submit"><span class="button-label">Đăng nhập</span><span class="spinner" aria-hidden="true"></span></button>
+            </form>
+            <p class="auth-switch">Chưa có tài khoản? <a href="/register">Đăng ký ngay</a></p>
+        </div>
+    </section>
+</main>
+<script th:src="@{/js/mainjs.js}" src="/js/mainjs.js"></script>
+</body>
+</html>
